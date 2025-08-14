@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using BankingSystem.Models;
+using System.Configuration;
 
 namespace BankingSystem.Database {
     public class BankingContext : DbContext {
-        // Ime connection string-a iz App.config , kako bi se mogo connectat?
-        public BankingContext() : base("name=BankingDb") {}
+        public BankingContext()
+            : base(GetConnectionString()) // dohvaćamo connection string sa zamijenjenom lozinkom
+        {
+        }
 
         // Tablice u bazi
         public DbSet<User> Users { get; set; }
@@ -23,18 +26,30 @@ namespace BankingSystem.Database {
             modelBuilder.Entity<User>()
                 .HasRequired(u => u.Racun)
                 .WithOptional()
-                .Map(m => m.MapKey("RacunId")); // ovo stvara foreign key u User tablici
+                .Map(m => m.MapKey("RacunId"));
 
             // RACUN -> TRANSACTIONS (jedan-na-više)
             modelBuilder.Entity<Racun>()
                 .HasMany(r => r.Transactions)
                 .WithRequired(t => t.Account)
-                .Map(m => m.MapKey("RacunId")); // foreign key u Transactions tablici
+                .Map(m => m.MapKey("RacunId"));
 
-            // Postavljanje primary key-a ako je potrebno
+            // Primary keys
             modelBuilder.Entity<User>().HasKey(u => u.Id);
             modelBuilder.Entity<Racun>().HasKey(r => r.Id);
             modelBuilder.Entity<Transactions>().HasKey(t => t.Id);
+        }
+
+
+        private static string GetConnectionString() {
+            // Dohvat connection stringa iz App.config
+            var connString = ConfigurationManager.ConnectionStrings["BankingDb"].ConnectionString;
+
+            // Dohvat passworda iz environment variable
+            var password = Environment.GetEnvironmentVariable("POSTGRES_PASSWORD");
+
+            // Zamjena placeholdera sa stvarnom lozinkom
+            return connString.Replace("{POSTGRES_PASSWORD}", password);
         }
     }
 }
