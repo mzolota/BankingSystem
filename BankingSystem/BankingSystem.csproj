@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\BankingContext.cs" />
+    <Compile Include="Database\RacunRepository.cs" />
     <Compile Include="Database\TransactionsRepository.cs" />
     <Compile Include="Database\UserRepository.cs" />
     <Compile Include="Form1.cs">

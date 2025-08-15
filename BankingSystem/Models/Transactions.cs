@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,7 @@ namespace BankingSystem.Models {
         public int Id { get; set; } // pkey
         public Racun Account { get; set; } // veza prema računu
         public TransactionType Type { get; set; }
-        public decimal Amount { get; set; }
+        public decimal Amount  { get; set; }
         public DateTime Date { get; set; }
 
         // Mora sadrzavati prazan konstruktor kako bi mogo instancirati objekte iz baze ?
@@ -40,18 +41,5 @@ namespace BankingSystem.Models {
             Amount = amount;
             Date = date;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
