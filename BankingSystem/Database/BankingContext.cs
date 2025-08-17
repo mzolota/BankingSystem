@@ -41,7 +41,11 @@ namespace BankingSystem.Database {
 
             // Mapiranje Transactions entiteta na tablicu
             modelBuilder.Entity<Transactions>()
-                .ToTable("transactions", "public"); 
+                .ToTable("transactions", "public")
+                .Property(t => t.Type)
+                .HasColumnName("type")       
+                .IsRequired();
+
 
             // Primary keys
             modelBuilder.Entity<User>().HasKey(u => u.Id);

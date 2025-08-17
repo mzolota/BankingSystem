@@ -18,21 +18,9 @@ namespace BankingSystem.Database {
             if (account == null) {
                 throw new Exception("Racun ne postoji");
             }
-
-            // dodavanje deposita u balance
-            if(transaction.Type == TransactionType.Deposit) {
-                account.Balance += transaction.Amount;
-            }
-            else if (transaction.Type == TransactionType.Withdraw || transaction.Type == TransactionType.Transfer ) {
-                if (account.Balance < transaction.Amount) {
-                    throw new Exception("nedovoljno sredstava na racunu");
-                }
-                account.Balance -= transaction.Amount;
-            }
-
             // dodavanje transakcije
             context.Transactions.Add(transaction);
-            context.SaveChanges();
+            
         }
 
         // dohvati transakcije
