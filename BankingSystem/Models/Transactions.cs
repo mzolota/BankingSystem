@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -13,11 +15,22 @@ namespace BankingSystem.Models {
         Withdraw,
         Transfer
     }
+    [Table("transactions")]
     public class Transactions {
+        [Key]
+        [Column("id")]
         public int Id { get; set; } // pkey
+
+        [ForeignKey("Account")]
+        [Column("account_id")]
+        public int AccountId { get; set; }
+
         public Racun Account { get; set; } // veza prema računu
+        [Column("type")]
         public TransactionType Type { get; set; }
+        [Column("amount")]
         public decimal Amount  { get; set; }
+        [Column("date")]
         public DateTime Date { get; set; }
 
         // Mora sadrzavati prazan konstruktor kako bi mogo instancirati objekte iz baze ?

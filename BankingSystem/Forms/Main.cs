@@ -8,10 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BankingSystem {
-    public partial class Form1 : Form {
-        public Form1() {
+namespace BankingSystem.Forms {
+    public partial class Main : Form {
+        public Main() {
             InitializeComponent();
+        }
+
+        private void button4_Click(object sender, EventArgs e) {
+
         }
     }
 }

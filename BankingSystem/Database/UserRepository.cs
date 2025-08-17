@@ -16,19 +16,24 @@ namespace BankingSystem.Database {
         public UserRepository(BankingContext Context) { context = Context;  }
 
         // dodaj korisnika u bazu i spremi promjene
-        public void AddUser(Models.User user) {
+        public void AddUser(User user) {
+            context.Racuni.Add(user.Racun);
+            context.SaveChanges(); // Racun dobije Id
+            user.AccountId = user.Racun.Id;
             context.Users.Add(user);
             context.SaveChanges();
         }
 
-        // dohvati email -> vjv koristit kod log in systema
+
+
+        // dohvati email 
         public User GetUserByEmail(string email) {
-            return context.Users.First(x => x.Email == email);
+            return context.Users.FirstOrDefault(x => x.Email == email);
         }
 
         // dohvati ime
         public User GetUserbyName(string name) {
-            return context.Users.First(y => y.Name == name);
+            return context.Users.FirstOrDefault(y => y.Name == name);
         }
         // updatea user-a
         public void UpdateUser(Models.User user) {
@@ -40,6 +45,12 @@ namespace BankingSystem.Database {
         public User GetUserById(int id) {
             return context.Users.FirstOrDefault(x => x.Id == id); 
         }
+
+
+        // pretrazivanje po emailu i passwordu iskljucivo za prijavu korisnika
+        public User GetUserByEmailAndPassword(string email, string password) {
+            return context.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+        } 
 
         
     }
