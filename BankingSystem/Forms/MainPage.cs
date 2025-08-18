@@ -86,5 +86,11 @@ namespace BankingSystem.Forms {
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnPrikazTransakcija_Click(object sender, EventArgs e) {
+            var Transakcije = new Transactions(this, _racunId);
+            this.Hide();
+            Transakcije.ShowDialog();
+        }
     }
 }

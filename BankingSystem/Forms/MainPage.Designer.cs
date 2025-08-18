@@ -37,6 +37,7 @@
             this.btnDeposit = new System.Windows.Forms.Button();
             this.lblVasAccId = new System.Windows.Forms.Label();
             this.lblPrikazIda = new System.Windows.Forms.Label();
+            this.btnPrikazTransakcija = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblBalance
@@ -51,18 +52,22 @@
             // lblUplata
             // 
             this.lblUplata.AutoSize = true;
+            this.lblUplata.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblUplata.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblUplata.Location = new System.Drawing.Point(44, 248);
             this.lblUplata.Name = "lblUplata";
-            this.lblUplata.Size = new System.Drawing.Size(34, 13);
+            this.lblUplata.Size = new System.Drawing.Size(50, 17);
             this.lblUplata.TabIndex = 1;
             this.lblUplata.Text = "Uplati";
             // 
             // lblIsplata
             // 
             this.lblIsplata.AutoSize = true;
+            this.lblIsplata.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblIsplata.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblIsplata.Location = new System.Drawing.Point(242, 248);
             this.lblIsplata.Name = "lblIsplata";
-            this.lblIsplata.Size = new System.Drawing.Size(34, 13);
+            this.lblIsplata.Size = new System.Drawing.Size(51, 17);
             this.lblIsplata.TabIndex = 2;
             this.lblIsplata.Text = "Isplati";
             this.lblIsplata.Click += new System.EventHandler(this.lblIsplata_Click);
@@ -70,9 +75,11 @@
             // lblTransferId
             // 
             this.lblTransferId.AutoSize = true;
-            this.lblTransferId.Location = new System.Drawing.Point(380, 248);
+            this.lblTransferId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTransferId.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTransferId.Location = new System.Drawing.Point(357, 248);
             this.lblTransferId.Name = "lblTransferId";
-            this.lblTransferId.Size = new System.Drawing.Size(61, 13);
+            this.lblTransferId.Size = new System.Drawing.Size(88, 17);
             this.lblTransferId.TabIndex = 3;
             this.lblTransferId.Text = "Account_id";
             // 
@@ -93,9 +100,11 @@
             // lblAmountTransfer
             // 
             this.lblAmountTransfer.AutoSize = true;
-            this.lblAmountTransfer.Location = new System.Drawing.Point(398, 283);
+            this.lblAmountTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblAmountTransfer.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAmountTransfer.Location = new System.Drawing.Point(357, 277);
             this.lblAmountTransfer.Name = "lblAmountTransfer";
-            this.lblAmountTransfer.Size = new System.Drawing.Size(43, 13);
+            this.lblAmountTransfer.Size = new System.Drawing.Size(62, 17);
             this.lblAmountTransfer.TabIndex = 6;
             this.lblAmountTransfer.Text = "Amount";
             // 
@@ -115,9 +124,11 @@
             // 
             // btnUplata
             // 
+            this.btnUplata.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUplata.ForeColor = System.Drawing.SystemColors.Control;
             this.btnUplata.Location = new System.Drawing.Point(47, 329);
             this.btnUplata.Name = "btnUplata";
-            this.btnUplata.Size = new System.Drawing.Size(75, 23);
+            this.btnUplata.Size = new System.Drawing.Size(100, 36);
             this.btnUplata.TabIndex = 9;
             this.btnUplata.Text = "Uplati";
             this.btnUplata.UseVisualStyleBackColor = true;
@@ -125,9 +136,11 @@
             // 
             // btnIsplata
             // 
+            this.btnIsplata.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIsplata.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIsplata.Location = new System.Drawing.Point(235, 329);
             this.btnIsplata.Name = "btnIsplata";
-            this.btnIsplata.Size = new System.Drawing.Size(75, 23);
+            this.btnIsplata.Size = new System.Drawing.Size(86, 36);
             this.btnIsplata.TabIndex = 10;
             this.btnIsplata.Text = "Isplati";
             this.btnIsplata.UseVisualStyleBackColor = true;
@@ -135,9 +148,11 @@
             // 
             // btnDeposit
             // 
+            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDeposit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDeposit.Location = new System.Drawing.Point(451, 329);
             this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(75, 23);
+            this.btnDeposit.Size = new System.Drawing.Size(87, 36);
             this.btnDeposit.TabIndex = 11;
             this.btnDeposit.Text = "Transfer";
             this.btnDeposit.UseVisualStyleBackColor = true;
@@ -160,11 +175,25 @@
             this.lblPrikazIda.Size = new System.Drawing.Size(0, 13);
             this.lblPrikazIda.TabIndex = 13;
             // 
+            // btnPrikazTransakcija
+            // 
+            this.btnPrikazTransakcija.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPrikazTransakcija.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPrikazTransakcija.Location = new System.Drawing.Point(592, 46);
+            this.btnPrikazTransakcija.Name = "btnPrikazTransakcija";
+            this.btnPrikazTransakcija.Size = new System.Drawing.Size(120, 33);
+            this.btnPrikazTransakcija.TabIndex = 14;
+            this.btnPrikazTransakcija.Text = "PrikazTransakcija";
+            this.btnPrikazTransakcija.UseVisualStyleBackColor = true;
+            this.btnPrikazTransakcija.Click += new System.EventHandler(this.btnPrikazTransakcija_Click);
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPrikazTransakcija);
             this.Controls.Add(this.lblPrikazIda);
             this.Controls.Add(this.lblVasAccId);
             this.Controls.Add(this.btnDeposit);
@@ -202,5 +231,6 @@
         private System.Windows.Forms.Button btnDeposit;
         private System.Windows.Forms.Label lblVasAccId;
         private System.Windows.Forms.Label lblPrikazIda;
+        private System.Windows.Forms.Button btnPrikazTransakcija;
     }
 }

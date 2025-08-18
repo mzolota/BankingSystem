@@ -31,7 +31,7 @@ namespace BankingSystem.Controllers {
             racun.Balance -= isplata;
 
             // dodavanje transakcije
-            var transakcija = new Transactions(racun, TransactionType.Withdraw, isplata, DateTime.Now);
+            var transakcija = new Transactions(racun,"Isplata", isplata, DateTime.Now);
             _transactionRepository.AddTransaction(transakcija);
 
             _racunRepository.Save();
@@ -47,7 +47,7 @@ namespace BankingSystem.Controllers {
 
             racun.Balance += uplata;
 
-            var transakcija = new Transactions(racun, TransactionType.Deposit, uplata, DateTime.Now);
+            var transakcija = new Transactions(racun,"uplata", uplata, DateTime.Now);
             _transactionRepository.AddTransaction(transakcija);
 
             _racunRepository.Save();
@@ -67,8 +67,8 @@ namespace BankingSystem.Controllers {
             fromRacun.Balance -= amount;
             toRacun.Balance += amount;
 
-            _transactionRepository.AddTransaction(new Transactions(fromRacun, TransactionType.Transfer, -amount, DateTime.Now));
-            _transactionRepository.AddTransaction(new Transactions(toRacun, TransactionType.Transfer, amount, DateTime.Now));
+            _transactionRepository.AddTransaction(new Transactions(fromRacun, "transfer", -amount, DateTime.Now));
+            _transactionRepository.AddTransaction(new Transactions(toRacun, "transfer", amount, DateTime.Now));
 
             _racunRepository.Save();
         }

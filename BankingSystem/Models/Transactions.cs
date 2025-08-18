@@ -9,12 +9,7 @@ using System.Threading.Tasks;
 
 namespace BankingSystem.Models {
 
-    // enum koristen za tip transakcije
-    public enum TransactionType {
-        Deposit,
-        Withdraw,
-        Transfer
-    }
+    
     [Table("transactions")]
     public class Transactions {
         [Key]
@@ -27,7 +22,7 @@ namespace BankingSystem.Models {
 
         public Racun Account { get; set; } // veza prema računu
         [Column("type")]
-        public TransactionType Type { get; set; }
+        public string TransactionType  { get; set; }
         [Column("amount")]
         public decimal Amount  { get; set; }
         [Column("date")]
@@ -38,19 +33,19 @@ namespace BankingSystem.Models {
 
 
         // regularni konstruktor 
-        public Transactions(int id , Racun racun , TransactionType type, decimal amount, DateTime date) {
+        public Transactions(int id , Racun racun , string transactiontype, decimal amount, DateTime date) {
             Id = id;
             Account = racun;
-            Type = type;
+            TransactionType = transactiontype;
             Amount = amount;
             Date = date;
 
         }
 
         // konstruktor bez id-a za bazu
-        public Transactions(Racun racun, TransactionType type, decimal amount, DateTime date) {
+        public Transactions(Racun racun, string transactiontype, decimal amount, DateTime date) {
             Account  = racun;
-            Type = type;
+            TransactionType = transactiontype;
             Amount = amount;
             Date = date;
         }

@@ -32,12 +32,14 @@ namespace BankingSystem.Database {
         }
 
         // filtriranje podataka ( koristeno za ispis transakcija formu)
-        public List<Transactions> GetTransactionsByType(Racun account, TransactionType type) {
+        public List<Transactions> GetTransactionsByType(Racun account, string transactionType) {
             return context.Transactions
-                          .Where(t => t.Account.Id == account.Id && t.Type == type)
+                          .Where(t => t.Account.Id == account.Id && t.TransactionType == transactionType)
                           .OrderByDescending(t => t.Date)
                           .ToList();
         }
+
+
 
 
 

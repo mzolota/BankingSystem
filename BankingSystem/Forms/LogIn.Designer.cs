@@ -37,6 +37,8 @@
             // 
             // BtnPrijava
             // 
+            this.BtnPrijava.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BtnPrijava.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnPrijava.Location = new System.Drawing.Point(116, 261);
             this.BtnPrijava.Name = "BtnPrijava";
             this.BtnPrijava.Size = new System.Drawing.Size(119, 39);
@@ -47,9 +49,11 @@
             // 
             // btnRegistracija
             // 
-            this.btnRegistracija.Location = new System.Drawing.Point(523, 336);
+            this.btnRegistracija.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRegistracija.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRegistracija.Location = new System.Drawing.Point(519, 336);
             this.btnRegistracija.Name = "btnRegistracija";
-            this.btnRegistracija.Size = new System.Drawing.Size(119, 39);
+            this.btnRegistracija.Size = new System.Drawing.Size(123, 45);
             this.btnRegistracija.TabIndex = 1;
             this.btnRegistracija.Text = "Registriraj se";
             this.btnRegistracija.UseVisualStyleBackColor = true;
@@ -58,9 +62,11 @@
             // lblPrijava
             // 
             this.lblPrijava.AutoSize = true;
-            this.lblPrijava.Location = new System.Drawing.Point(162, 141);
+            this.lblPrijava.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPrijava.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPrijava.Location = new System.Drawing.Point(114, 101);
             this.lblPrijava.Name = "lblPrijava";
-            this.lblPrijava.Size = new System.Drawing.Size(39, 13);
+            this.lblPrijava.Size = new System.Drawing.Size(104, 31);
             this.lblPrijava.TabIndex = 2;
             this.lblPrijava.Text = "Prijava";
             // 
@@ -81,9 +87,11 @@
             // lblRegistracija
             // 
             this.lblRegistracija.AutoSize = true;
-            this.lblRegistracija.Location = new System.Drawing.Point(535, 287);
+            this.lblRegistracija.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblRegistracija.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblRegistracija.Location = new System.Drawing.Point(492, 269);
             this.lblRegistracija.Name = "lblRegistracija";
-            this.lblRegistracija.Size = new System.Drawing.Size(89, 13);
+            this.lblRegistracija.Size = new System.Drawing.Size(235, 31);
             this.lblRegistracija.TabIndex = 5;
             this.lblRegistracija.Text = "Nemaš Account?";
             // 
@@ -91,7 +99,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(300, 188);
+            this.tabControl1.Location = new System.Drawing.Point(165, 306);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(8, 8);
@@ -121,6 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lblRegistracija);
